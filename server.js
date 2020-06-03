@@ -5,9 +5,6 @@ const socketio = require('socket.io');
 const moment = require("moment");
 
 const PORT = process.env.PORT || 3000;
-server.listen(PORT, () => {
-    console.log(`Our app is running on port ${ PORT }`);
-});
 
 const {
   userJoin,
@@ -74,6 +71,10 @@ io.on('connection', socket => {
         });
       }
     });
+});
+
+server.listen(PORT, () => {
+  console.log(`Our app is running on port ${ PORT }`);
 });
 
 function formatMessage(username, text) {
